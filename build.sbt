@@ -2,6 +2,8 @@ name := """play-java-app"""
 
 version := "1.0-SNAPSHOT"
 
+// PlayEbean
+
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.12.4"
@@ -9,8 +11,9 @@ scalaVersion := "2.12.4"
 crossScalaVersions := Seq("2.11.12", "2.12.4")
 
 libraryDependencies += guice
+// libraryDependencies ++= Seq(guice, evolutions, javaJdbc)
 
-// Test Database
+// H2 Database
 libraryDependencies += "com.h2database" % "h2" % "1.4.196"
 
 // Testing libraries for dealing with CompletionStage...
